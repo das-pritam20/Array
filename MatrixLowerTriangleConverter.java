@@ -1,22 +1,22 @@
 package com.nit.arrays;
 
-public class TransposeOfSquareMatrix_LeftDiagonal {
-	public static void transpose(int arr[][]) {
-		int m = arr.length;
-		for(int i = 0; i < m; i++) {
-			for(int j = i + 1; j < m; j++) {
-				int temp = arr[i][j];
-				arr[i][j] = arr[j][i];
-				arr[j][i] = temp;
+//Q. Convert a matrix to its lower triangular form.
+public class MatrixLowerTriangleConverter {
+	public static void toLowerTriangular(int[][] matrix) {
+		int n = matrix.length;
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (j > i) {
+					matrix[i][j] = 0;
+				}
 			}
 		}
 	}
+
 	public static void main(String[] args) {
-		int arr[][] = { { 1, 2, 3, 2 },
-						{ 4, 5, 6, 2 },
-						{ 7, 8, 9, 2 },
-						{ 1, 1, 1, 0 } };
-		// before transpose
+		int arr[][] = { { 1, 2, 3, 2 }, { 4, 5, 6, 2 }, { 7, 8, 9, 2 }, { 1, 1, 1, 1 } };
+// before lower triangle form
 		System.out.println("-----------Before-----------");
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
@@ -24,8 +24,10 @@ public class TransposeOfSquareMatrix_LeftDiagonal {
 			}
 			System.out.println();
 		}
-		transpose(arr);
-		// after transpose
+		
+		toLowerTriangular(arr);
+		
+// after lower triangle form
 		System.out.println("-----------After-----------");
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {

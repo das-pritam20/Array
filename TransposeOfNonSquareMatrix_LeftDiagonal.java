@@ -1,7 +1,7 @@
 package com.nit.arrays;
 
 public class TransposeOfNonSquareMatrix_LeftDiagonal {
-	public static void transpose(int arr[][]) {
+	public static int[][] transpose(int arr[][]) {
 		int m = arr.length;
 		int n = arr[0].length;
 		
@@ -12,14 +12,7 @@ public class TransposeOfNonSquareMatrix_LeftDiagonal {
 				res[i][j] = arr[j][i];
 			}
 		}
-		// after transpose
-		System.out.println("-----------After-----------");
-		for (int i = 0; i < res.length; i++) {
-			for (int j = 0; j < res[i].length; j++) {
-				System.out.print(res[i][j] + " ");
-			}
-			System.out.println();
-		}
+		return res;
 	}
 	public static void main(String[] args) {
 		int arr[][] = { { 1, 2,  },
@@ -33,7 +26,14 @@ public class TransposeOfNonSquareMatrix_LeftDiagonal {
 			}
 			System.out.println();
 		}
-		transpose(arr);
-
+		int res[][] = transpose(arr);
+		// after transpose
+		System.out.println("-----------After-----------");
+		for (int i = 0; i < res.length; i++) {
+			for (int j = 0; j < res[i].length; j++) {
+				System.out.print(res[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 }
